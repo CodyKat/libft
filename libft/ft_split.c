@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:50 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:38:30 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/07 22:58:00 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char	**ft_split(const char *s, char c)
 	{
 		word_len = ft_strlen_c(s, c);
 		table[index] = (char *)malloc(sizeof(char) * (word_len + 1));
+		if (table[index] == 0)
+			return (0);
 		ft_strcpy_c(table[index], s, c);
 		s += word_len;
 		while (*s != '\0' && *s == c)
