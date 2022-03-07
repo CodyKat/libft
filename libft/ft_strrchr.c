@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:38 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:32:12 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/07 21:56:30 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	int			s_len;
 	const char	to_find;
 
+	if (s == 0)
+		return (0);
 	s_len = ft_strlen(s);
 	to_find = c;
 	while (s_len > 0)

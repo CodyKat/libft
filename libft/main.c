@@ -3,7 +3,8 @@
 int main()
 {
 	printf("========isalpha========");
-	
+	printf("correct : 111000");
+	printf("%d%d%d%d%d%d", )
 	printf("========ft_isalpha========");
 
 	printf("========isdigit========");

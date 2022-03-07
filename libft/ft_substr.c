@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:46 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:11:18 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/07 22:06:20 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (0);
 	else
 	{
-		if (start + len > s_len)
+		if (start + len <= s_len)
 		{
 			result = (char *)malloc(sizeof(char) * (len + 1));
 			ft_strlcpy(result, s + start, len + 1);
 		}
 		else
 		{
-			result = (char *)malloc(sizeof(char) * (s_len - start));
-			ft_strcpy(result, s + start);
+			result = (char *)malloc(sizeof(char) * (s_len - start + 1));
+			ft_strlcpy(result, s + start, s_len - start + 1);
 		}
 	}
 	return (result);

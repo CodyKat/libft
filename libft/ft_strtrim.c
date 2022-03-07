@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:42 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:11:14 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/07 21:56:48 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	char	*result;
 	int		result_len;
 
-	if (s1 == NULL || s1 == NULL)
+	if (s1 == 0 || s1 == 0)
 		return (0);
 	start = s1;
 	end = s1 + ft_strlen(s1) - 1;

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 19:04:23 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:48:46 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/07 22:25:12 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 22:33:16 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	unsigned char		stop_point;
-	unsigned char		*p_dst;
-	const unsigned char	*p_src;
+	int				s_len;
+	unsigned int	index;
+	char			*result;
 
-	if (dst == 0 || src == 0)
+	if (s == 0)
 		return (0);
-	stop_point = c;
-	p_dst = dst;
-	p_src = src;
-	while (n-- > 0)
+	index = 0;
+	s_len = ft_strlen(s);
+	result = (char *)malloc(sizeof(char) * (s_len + 1));
+	if (result == 0)
+		return (0);
+	while (index < s_len)
 	{
-		if (*p_src == stop_point)
-			return (p_src + 1);
-		*p_dst++ = *p_src++;
+		result[index] = f(index, s[index]);
+		index++;
 	}
-	return (0);
+	result[index] = '\0';
+	return (result);
 }
