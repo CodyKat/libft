@@ -1,6 +1,19 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/07 19:05:10 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 19:28:36 by jaemjeon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*strdup(const char *s1)
+#include <stdlib.h>
+#include "libft.h"
+
+char	*ft_strdup(const char *s1)
 {
 	char	*s2;
 

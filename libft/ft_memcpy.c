@@ -1,15 +1,29 @@
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/07 19:04:39 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 19:47:11 by jaemjeon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char		*p_dest;
+	unsigned char		*p_dst;
 	const unsigned char	*p_src;
 
-	if (dset == 0 || src == 0)
+	if (dst == 0 || src == 0)
 		return (0);
-	p_dest = dest;
+	p_dst = dst;
 	p_src = src;
 	while (n-- > 0)
 	{
-		*p_dest = *p_src;
+		*p_dst = *p_src;
 	}
-	return (dest);
+	return (dst);
 }

@@ -1,28 +1,42 @@
-static int	check_is_there(const char *s1, const char *s2, size_t n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/07 19:05:34 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 20:01:15 by jaemjeon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static int	check_is_there(const char *haystack, const char *needle, size_t n)
 {
 	while (n-- > 0)
 	{
-		if (*s1++ != *s2++)
+		if (*haystack++ != *needle++)
 			return (0);
 	}
 	return (1);
 }
 
-char	*strnstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	int	s1_len;
-	int	s2_len;
+	int	haystack_len;
+	int	needle_len;
 	int	count;
 	int	count_limit;
 
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
+	haystack_len = ft_strlen(haystack);
+	needle_len = ft_strlen(needle);
 	count = 0;
-	count_limit = s1_len - s2_len + 1;
+	count_limit = haystack_len - needle_len + 1;
 	while (count < count_limit)
 	{
-		if (check_is_there(s1 + count, s2, n))
-			return (s1 + count);
+		if (check_is_there(haystack + count, needle, n))
+			return (haystack + count);
 		count++;
 	}
 	return (0);

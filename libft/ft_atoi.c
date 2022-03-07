@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/07 19:03:53 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 19:44:11 by jaemjeon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 static int	is_space(const char *c)
 {
 	if ((9 <= *c && *c < 13) || *c == ' ')
@@ -5,7 +19,7 @@ static int	is_space(const char *c)
 	return (0);
 }
 
-int	atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	result;
 	int	sign;

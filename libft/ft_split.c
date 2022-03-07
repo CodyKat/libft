@@ -1,6 +1,19 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/07 19:04:50 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 19:38:30 by jaemjeon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_count_words(const char *s, char c)
+#include <stdlib.h>
+#include "libft.h"
+
+static int	ft_count_words(const char *s, char c)
 {
 	int	count;
 
@@ -17,7 +30,7 @@ int	ft_count_words(const char *s, char c)
 	}
 }
 
-int	ft_strlen_c(const char *s, char c)
+static int	ft_strlen_c(const char *s, char c)
 {
 	int	len;
 
@@ -30,7 +43,7 @@ int	ft_strlen_c(const char *s, char c)
 	return (len);
 }
 
-void	ft_strcpy_c(char *dest, const char *src, char c)
+static void	ft_strcpy_c(char *dest, const char *src, char c)
 {
 	while (*src != 0 && *src != c)
 	{

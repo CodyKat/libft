@@ -1,27 +1,41 @@
-void	*ft_memmove(char *dest, const char *src, size_t n)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/07 19:04:43 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 19:48:11 by jaemjeon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memmove(char *dst, const char *src, size_t len)
 {
-	unsigned char		*p_dest;
+	unsigned char		*p_dst;
 	const unsigned char	*p_src;
 
-	if (p_dest == 0 || p_src == 0)
+	if (p_dst == 0 || p_src == 0)
 		return (0);
-	if (dest > src)
+	if (dst > src)
 	{
-		p_dest = dest + n - 1;
-		p_src = src + n - 1;
-		while (n-- > 0)
+		p_dst = dst + len - 1;
+		p_src = src + len - 1;
+		while (len-- > 0)
 		{
-			*p_dest-- = *p_src--;
+			*p_dst-- = *p_src--;
 		}
 	}
 	else
 	{
-		p_dest = dest;
+		p_dst = dst;
 		p_src = src;
-		while (n-- > 0)
+		while (len-- > 0)
 		{
-			*p_dest++ = *p_src++;
+			*p_dst++ = *p_src++;
 		}
 	}
-	return (dest);
+	return (dst);
 }
