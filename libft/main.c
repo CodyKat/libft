@@ -1,46 +1,107 @@
 #include <stdio.h>
+#include <limits.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include "libft.h"
 
 int main()
 {
-	printf("========isalpha========");
-	printf("correct : 111000");
-	printf("%d%d%d%d%d%d", )
-	printf("========ft_isalpha========");
+	printf("========isalpha========\n");
+	printf("origin : my\n");
+	long long data[5];
+	{
+		data[0] = 'a';
+		data[1] = 'Z' + 1;
+		data[2] = (long long)UCHAR_MAX + 1 + 'a';
+		data[3] = (long long)INT_MAX - (long long)INT_MIN + 1 + 'a';
+		data[4] = (long long)INT_MAX - (long long)INT_MIN + 1 + 'a' - 1;
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d %d\n", isalpha(data[i]), ft_isalpha(data[i]));
+	}
 
-	printf("========isdigit========");
-	printf("========ft_isdigit========");
+
+
+	printf("========isdigit========\n");
+	printf("origin : my\n");
+	{
+		data[0] = '0';
+		data[1] = '9' + 1;
+		data[2] = (long long)UCHAR_MAX + 1 + '0';
+		data[3] = (long long)INT_MAX - (long long)INT_MIN + 1 + '0';
+		data[4] = (long long)INT_MAX - (long long)INT_MIN + 1 + '9' - 1;
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d %d\n", isdigit(data[i]), ft_isdigit(data[i]));
+	}
+
+
+
+	printf("========isalnum========\n");	
+	printf("origin : my\n");
+	{
+		data[0] = 'A';
+		data[1] = '9' + 1;
+	}
+	for (int i = 0; i < 2; i++)
+	{
+		printf("%d %d\n", isalnum(data[i]), ft_isalnum(data[i]));
+	}
+
+
+
+
+	printf("========isascii========\n");	
+	printf("origin : my\n");
+	{
+		data[0] = 15;
+		data[1] = 255;
+		data[2] = 122;
+	}
+	for (int i = 0; i < 2; i++)
+	{
+		printf("%d %d\n", isascii(data[i]), ft_isascii(data[i]));
+	}
+	printf("========isprint========\n");
 	
-	printf("========isalnum========");
-	printf("========ft_isalum========");
+	printf("origin : my\n");
+	{
+		data[0] = 31;
+		data[1] = 45;
+		data[2] = 250;
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%d %d\n", isprint(data[i]), ft_isprint(data[i]));
+	}
+
+
+
+	printf("========strlen========\n");
 	
-	printf("========isascii========");
-	printf("========ft_isascii========");
-	
-	printf("========isprint========");
-	printf("========ft_isprint========");
-	
-	printf("========strlen========");
-	printf("========ft_strlen========");
-	
+	printf("origin : my\n");
+	{
+		data[0] = 'A';
+		data[1] = '9' + 1;
+	}
+	for (int i = 0; i < 2; i++)
+	{
+	//	printf("%d %d\n", isalpha(data[i]), ft_isalpha(data[i]));
+	}
 	printf("========memset========");
-	printf("========ft_memset========");
 	
 	printf("========bzero========");
-	printf("========ft_bzero========");
 	
 	printf("========memcpy========");
-	printf("========ft_memcpy========");
 	
 	printf("========memmove========");
-	printf("========ft_memmove========");
 	
 	printf("========strlcpy========");
-	printf("========ft_strlcpy========");
 	
 	printf("========strlcat========");
-	printf("========ft_strlcat========");
 
 	printf("========strncmp========");
-	printf("========ft_strncmp========");
 	return 0;
 }
