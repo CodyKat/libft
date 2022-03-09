@@ -6,16 +6,16 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:38 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 21:56:30 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:37:29 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+size_t	ft_strlen(const char *s);
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int			s_len;
-	const char	to_find;
+	int		s_len;
+	char	to_find;
 
 	if (s == 0)
 		return (0);
@@ -24,8 +24,16 @@ char	*ft_strrchr(const char *s, int c)
 	while (s_len > 0)
 	{
 		if (*(s + s_len - 1) == to_find)
-			return (s + s_len - 1);
+			return ((char *)(s + s_len - 1));
 		s_len--;
 	}
-	return (0);
+	return ("");
+}
+#include <string.h>
+#include <stdio.h>
+int main()
+{
+	printf("%s\n%s\n", strrchr("abccde", 'c'), ft_strrchr("abccde", 'c'));
+	printf("%s\n%s\n", strrchr("abc", '\0'), ft_strrchr("abc", '\0'));
+	return 0;
 }

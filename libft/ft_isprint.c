@@ -6,11 +6,9 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:12 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:09:15 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:31:43 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

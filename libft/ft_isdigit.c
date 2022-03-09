@@ -6,16 +6,11 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:00:48 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/08 22:03:59 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 20:27:31 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
-
-
-static int	is_in_uchar(long num)
+static int	is_in_uchar(int num)
 {
 	if (0 <= num && num <= 255)
 		return (1);

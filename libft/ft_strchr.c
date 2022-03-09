@@ -6,15 +6,13 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:54 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 21:32:03 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 20:36:13 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 char	*ft_strchr(const char *s, int c)
 {
-	const char	to_find;
+	char	to_find;
 
 	if (s == 0)
 		return (0);
@@ -25,5 +23,15 @@ char	*ft_strchr(const char *s, int c)
 			break ;
 		s++;
 	}
-	return (s);
+	return ((char *)s);
+}
+#include <string.h>
+#include <stdio.h>
+int main()
+{
+	printf("%s\n", strchr("abcde", 'c'));
+	printf("%s\n", ft_strchr("abcde", 'c'));
+	printf("%s\n", strchr("abcde", '\0'));
+	printf("%s", ft_strchr("abcde", '\0'));
+	return 0;
 }

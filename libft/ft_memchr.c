@@ -6,11 +6,11 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:31 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:09:40 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 20:56:04 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -18,12 +18,21 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char		to_find;
 
 	ptr = s;
-	to_find = c;
+	to_find = (unsigned char)c;
 	while (n-- > 0)
 	{
 		if (*ptr == to_find)
-			return (s);
+			return ((void *)ptr);
 		ptr++;
 	}
 	return (0);
+}
+
+#include <string.h>
+#include <stdio.h>
+int main()
+{
+	printf("%s\n%s\n", memchr("abcdcd", 'c', 5), ft_memchr("abcdcd", 'c', 5));
+	printf("%s\n%s\n", memchr("abcdcd", 'c', 2), ft_memchr("abcdcd", 'c', 2));
+	return 0;
 }

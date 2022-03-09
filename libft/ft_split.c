@@ -6,12 +6,11 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:50 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 22:58:00 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 19:20:53 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
 
 static int	ft_count_words(const char *s, char c)
 {
@@ -22,60 +21,77 @@ static int	ft_count_words(const char *s, char c)
 	{
 		while (*s == c)
 			s++;
-		if (s == 0)
+		if (*s == 0)
 			return (count);
 		while (s != 0 && *s != c)
 			s++;
 		count++;
 	}
+	return (count);
 }
 
-static int	ft_strlen_c(const char *s, char c)
+static char	*ft_alloc_string(char **dst, const char *src, char del)
 {
-	int	len;
+	int		len;
+	int		idx;
 
 	len = 0;
-	while (*s != 0 && *s != c)
+	while (*src == del)
+		src++;
+	while (*src != del && *src != '\0')
 	{
-		s++;
+		src++;
 		len++;
 	}
-	return (len);
+	*dst = (char *)malloc(sizeof(char) * (len + 1));
+	if (dst == 0)
+		return (0);
+	src -= len;
+	idx = 0;
+	while (*(src + idx) != del && *(src + idx) != '\0')
+	{
+		*(*dst + idx) = *(src + idx);
+		idx++;
+	}
+	*(*dst + idx) = '\0';
+	return ((char *)(src + idx - 1));
 }
 
-static void	ft_strcpy_c(char *dest, const char *src, char c)
+static void	free_back(char **table, int idx)
 {
-	while (*src != 0 && *src != c)
+	int	f_idx;
+
+	f_idx = 0;
+	while (f_idx < idx)
 	{
-		*dest++ = *src++;
+		free(table[f_idx]);
+		f_idx++;
 	}
-	*dest = '\0';
+	free(table);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	int		words;
-	int		word_len;
-	int		index;
 	char	**table;
+	int		word_count;
+	int		idx;
 
-	index = 0;
-	if (s == 0)
+	idx = 0;
+	word_count = ft_count_words(s, c);
+	table = (char **)malloc(sizeof(char *) * (word_count + 1));
+	if (table == 0)
 		return (0);
-	words = ft_count_words(s, c);
-	table = (char **)malloc(sizeof(char *) * (words + 1));
-	while (index < words)
+	while (idx < word_count)
 	{
-		word_len = ft_strlen_c(s, c);
-		table[index] = (char *)malloc(sizeof(char) * (word_len + 1));
-		if (table[index] == 0)
+		s = ft_alloc_string(&table[idx], s, c);
+		if (s == 0)
+		{
+			free_back(table, idx);
 			return (0);
-		ft_strcpy_c(table[index], s, c);
-		s += word_len;
-		while (*s != '\0' && *s == c)
-			s++;
-		index++;
+		}
+		s++;
+		idx++;
 	}
-	table[index] = 0;
+	table[word_count] = 0;
 	return (table);
 }

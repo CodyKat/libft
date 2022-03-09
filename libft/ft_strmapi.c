@@ -6,12 +6,13 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:25:12 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 22:33:16 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:36:54 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+
+size_t	ft_strlen(const char *s);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

@@ -6,11 +6,11 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:03:53 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:44:11 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:06:26 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+int	ft_isdigit(int c);
 
 static int	is_space(const char *c)
 {
@@ -21,8 +21,9 @@ static int	is_space(const char *c)
 
 int	ft_atoi(const char *str)
 {
-	int	result;
-	int	sign;
+	int		result;
+	int		sign;
+	char	*digit_ptr;
 
 	result = 0;
 	sign = 1;
@@ -37,10 +38,20 @@ int	ft_atoi(const char *str)
 		str++;
 		sign *= -1;
 	}
-	while (ft_isdigit(str))
+	digit_ptr = (char *)str;
+	while (ft_isdigit(*digit_ptr))
 	{
 		result *= 10;
-		result += (*str - '0');
+		result += (*digit_ptr - '0');
+		digit_ptr++;
 	}
-	return (result);
+	return (result * sign);
+}
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	printf("%d\n%d\n", atoi(" 	 -123abc123"), ft_atoi(" 	 -123abc123"));
+	printf("%d\n%d", atoi(" +2147483648"), ft_atoi(" +2147483648"));
+	return 0;
 }

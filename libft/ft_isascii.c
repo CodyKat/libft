@@ -6,11 +6,9 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:00:44 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 19:08:59 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:31:33 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isascii(int c)
 {

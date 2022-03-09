@@ -6,12 +6,14 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:10 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/07 21:38:37 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/09 22:18:47 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlen(const char *s);
 
 char	*ft_strdup(const char *s1)
 {
