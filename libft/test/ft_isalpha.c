@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 19:05:26 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/09 11:30:39 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/07 19:00:39 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/09 00:01:07 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+//#include "libft.h"
+#include <ctype.h>
+
+static int	is_in_uchar(int num)
 {
-	size_t	len;
+	if (0 <= num && num <= 255)
+		return (1);
+	return (0);
+}
 
-	len = 0;
-	while (*s++ != 0)
-	{
-		len++;
-	}
-	return (len);
+int	ft_isalpha(int c)
+{
+	unsigned char	test_chr;
+
+	if (is_in_uchar(c) == 0)
+		return (0);
+	test_chr = c;
+	if (('a' <= test_chr && test_chr <= 'z') || ('A' <= test_chr && test_chr <= 'Z'))
+		return (1);
+	return (0);
 }

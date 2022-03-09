@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 19:05:26 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/09 11:30:39 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/07 19:00:44 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 19:08:59 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isascii(int c)
 {
-	size_t	len;
-
-	len = 0;
-	while (*s++ != 0)
-	{
-		len++;
-	}
-	return (len);
+	return (0 <= c && c <= 127);
 }

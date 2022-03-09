@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <ctype.h>
+#include <string.h>
 #include <stdlib.h>
 #include "libft.h"
 
@@ -80,25 +81,22 @@ int main()
 
 
 	printf("========strlen========\n");
-	char *s1, *s2, *s3;
+	
 	printf("origin : my\n");
+	char *s1, *s2, *s3;
 	{
 		s1 = strdup("abcde");
 		s2 = strdup("");
 		s3 = NULL;
 	}
-	printf("%d %d\n", strlen(s1), ft_strlen(s1));
-	printf("%d %d\n", strlen(s2), ft_strlen(s2));
-	printf("%d %d\n", strlen(s3), ft_strlen(s3));
 
-
-
+	printf("%ld %ld\n", strlen(s1), ft_strlen(s1));
+	printf("%ld %ld\n", strlen(s2), ft_strlen(s2));
+//	printf("%ld %ld\n", strlen(s3), ft_strlen(s3));
+	printf("%ld", ft_strlen(s3));
+	
 	printf("========memset========");
 	
-	printf("origin : my\n");
-	{
-		
-	}
 	printf("========bzero========");
 	
 	printf("========memcpy========");
