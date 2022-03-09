@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 19:05:26 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/09 15:12:21 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/07 19:03:58 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/09 15:25:24 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t	len;
+	unsigned char	*p;
 
-	len = 0;
-	while (*s++ != 0)
+	p = s;
+	while (n-- > 0)
 	{
-		len++;
+		*p++ = '\0';
 	}
-	return (len);
 }

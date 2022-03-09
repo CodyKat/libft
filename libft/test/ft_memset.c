@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 19:05:26 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/09 15:12:21 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/07 19:04:47 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/07 19:49:31 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	len;
+	unsigned char	*p;
 
-	len = 0;
-	while (*s++ != 0)
+	p = b;
+	while (len-- > 0)
 	{
-		len++;
+		*p++ = c;
 	}
-	return (len);
+	return (b);
 }

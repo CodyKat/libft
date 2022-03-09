@@ -81,24 +81,48 @@ int main()
 
 
 	printf("========strlen========\n");
-	
-	printf("origin : my\n");
 	char *s1, *s2, *s3;
+	printf("origin : my\n");
 	{
 		s1 = strdup("abcde");
 		s2 = strdup("");
 		s3 = NULL;
 	}
-
 	printf("%ld %ld\n", strlen(s1), ft_strlen(s1));
 	printf("%ld %ld\n", strlen(s2), ft_strlen(s2));
 //	printf("%ld %ld\n", strlen(s3), ft_strlen(s3));
-	printf("%ld", ft_strlen(s3));
-	
-	printf("========memset========");
-	
-	printf("========bzero========");
-	
+
+
+
+	printf("========memset========\n");
+	printf("before string\n");
+	printf("%s\n", s1);
+	printf("after string\n");
+	printf("origin : my\n");
+	{
+		ft_memset(s1, 'a', 3);
+		printf("%s : ", s1);
+		free(s1);
+		s1 = strdup("abcde");
+		memset(s1, 'a', 3);
+		printf("%s\n", s1);
+		free(s1);
+		s1 = strdup("abcde");
+	}
+	printf("========bzero========\n");
+	{
+		printf("before string\n");
+		printf("%s\n", s1);
+		printf("after string");
+		printf("    ft_bzero(s1, 3)\n");
+		ft_bzero(s1, 3);
+		printf("answer : \n\n\n\nde\ne\n");
+		printf("my result : \n");
+		for (int i = 0; i < 5; i++)
+		{
+			printf("%s\n", s1 + i);
+		}
+	}
 	printf("========memcpy========");
 	
 	printf("========memmove========");

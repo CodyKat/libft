@@ -93,14 +93,33 @@ int main()
 
 
 
-	printf("========memset========");
-	
+	printf("========memset========\n");
+	printf("before string\n");
+	printf("%s\n%s%s\n", s1, s2, s3);
+	printf("after string\n");
 	printf("origin : my\n");
 	{
-		
+		ft_memset(s1, 'a', 3);
+		printf("%s : ", s1);
+		free(s1);
+		s1 = strdup("abcde");
+		memset(s1, 'a', 3);
+		printf("%s\n", s1);
+		free(s1);
+		s1 = strdup("abcde");
 	}
 	printf("========bzero========");
-	
+	{
+		printf("before string\n");
+		printf("%s\n", s1);
+		printf("after string\n");
+		ft_bzero(s1, 3);
+		for (int i = 0; i < 5; i++)
+		{
+			printf("%c", s1 + i);
+		}
+		printf("\n");
+	}
 	printf("========memcpy========");
 	
 	printf("========memmove========");
