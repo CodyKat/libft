@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 14:59:30 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 20:07:51 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/10 14:13:54 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/10 21:16:02 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list *ft_lstlast(t_list *lst)
 {
+	while (lst->next != 0)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }

@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 14:59:30 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 20:07:51 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/10 14:18:36 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/10 21:15:17 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
+	del(lst->content);
+	free(lst);
 }

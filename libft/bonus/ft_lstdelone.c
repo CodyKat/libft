@@ -6,11 +6,12 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:18:36 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 14:56:22 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:13:01 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	
+	del(lst->content);
+	free(lst);
 }
