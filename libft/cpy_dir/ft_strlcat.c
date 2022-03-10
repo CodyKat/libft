@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:18 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 15:25:29 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/10 22:56:03 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
+	if (dstsize <= 0)
+		return (dst_len + src_len);
 	if (dst_len + 1 < dstsize)
 	{
 		if (src_len >= dstsize)
