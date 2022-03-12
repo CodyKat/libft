@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:59:30 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 22:23:39 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/13 03:15:04 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-static void	ft_free_recur(t_list *lst, void (*del)(void *))
-{
-	t_list	*next_node;
-
-	while (lst)
-	{
-		del(lst->content);
-		next_node = lst->next;
-		free(lst);
-		lst = next_node;
-	}
-	lst = 0;
-}
-
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*start_node;
+	t_list	*cur_node;
 	t_list	*new_node;
-	
-	return (0);
+
+	new_node = ft_lstnew(f(lst->content));
+	if (new_node == 0)
+		return (0);
+	start_node = new_node;
+	cur_node = start_node;
+	lst = lst->next;
+	while (lst)
+	{
+		new_node = ft_lstnew(f(lst->content));
+		if (new_node == 0)
+		{
+			ft_lstclear(&start_node, del);
+			return (0);
+		}
+		cur_node->next = new_node;
+		cur_node = cur_node->next;
+		lst = lst->next;
+	}
+	return (start_node);
 }
-*/
