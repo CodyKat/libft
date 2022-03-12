@@ -1,5 +1,6 @@
 CC = gcc
 NAME = libft.a
+CFLAGS = -Wall -Wextra -Werror
 SRCS = ft_memset.c		\
 		ft_bzero.c		\
 		ft_memcpy.c		\
@@ -45,11 +46,16 @@ SRCS_BONUS = ft_lstnew.c		\
 			 ft_lstmap.c
 OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
-CFLAGS = -Wall -Wextra -Werror
+
+ifdef IS_BONUS
+	OBJ_FILES = ${OBJS} ${OBJS_BONUS}
+else
+	OBJ_FILES = ${OBJS}
+endif
 
 all : ${NAME}
 
-$(NAME) : ${OBJS}
+$(NAME) : ${OBJ_FILES}
 	ar rs ${NAME} ${OBJS}
 
 .c.o : ${SRCS} ${BONUS}
@@ -61,8 +67,8 @@ clean :
 fclean : clean
 	rm -f ${NAME}
 
-bonus : ${OBJS} ${OBJS_BONUS}
-	ar rs ${NAME} ${OBJS} ${OBJS_BONUS}
+bonus :
+	make IS_BONUS=1 all
 
 .PHONY : all clean fclean bonus re
 
