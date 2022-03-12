@@ -6,11 +6,11 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:31 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/09 20:56:04 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/12 04:26:57 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h" 
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -26,13 +26,4 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		ptr++;
 	}
 	return (0);
-}
-
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-	printf("%s\n%s\n", memchr("abcdcd", 'c', 5), ft_memchr("abcdcd", 'c', 5));
-	printf("%s\n%s\n", memchr("abcdcd", 'c', 2), ft_memchr("abcdcd", 'c', 2));
-	return 0;
 }

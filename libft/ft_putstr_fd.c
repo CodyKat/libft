@@ -6,11 +6,11 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:42:49 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 13:42:31 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/12 04:28:07 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h" 
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -19,10 +19,4 @@ void	ft_putstr_fd(char *s, int fd)
 		write(fd, s, 1);
 		s++;
 	}
-}
-
-int main()
-{
-	ft_putstr_fd("abcde", 1);
-	return 0;
 }

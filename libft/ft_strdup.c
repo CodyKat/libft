@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:10 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 13:43:11 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/12 18:22:55 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ char	*ft_strdup(const char *s1)
 {
 	char	*s2;
 
-	if (s1 == 0)
-		return (0);
 	s2 = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
 	if (!s2)
 		return (0);
-	strlcpy(s2, s1, ft_strlen(s1) + 1);
+	ft_strlcpy(s2, s1, ft_strlen(s1) + 1);
 	return (s2);
 }

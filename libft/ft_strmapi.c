@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 22:25:12 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 13:44:15 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:25:30 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	result[index] = '\0';
 	return (result);
-}
-
-#include <stdio.h>
-
-// example of applied func
-char func(unsigned int idx, char letter)
-{
-	return (letter + idx + 3);
-}
-
-int main()
-{
-	char (*f)(unsigned int, char);
-	
-
-	f = func;
-	printf("%s", ft_strmapi("abcd", f)); // dfhj
-	return 0;
 }

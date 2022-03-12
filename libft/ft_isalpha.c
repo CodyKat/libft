@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:00:39 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/09 22:31:27 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/11 04:42:53 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static int	is_in_uchar(int num)
 
 int	ft_isalpha(int c)
 {
-	unsigned char	test_chr;
+	unsigned char	chr;
 
 	if (is_in_uchar(c) == 0)
 		return (0);
-	test_chr = c;
-	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
+	chr = c;
+	if (('a' <= chr && chr <= 'z') || ('A' <= chr && chr <= 'Z'))
 		return (1);
 	return (0);
 }

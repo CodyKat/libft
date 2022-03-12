@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:42 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 13:44:52 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/12 17:53:38 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	const char	*start;
 	const char	*end;
-	char	*result;
-	int		result_len;
+	char		*result;
+	int			result_len;
 
 	start = s1;
 	end = s1 + ft_strlen(s1) - 1;
@@ -38,9 +38,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 	}
 	while (is_in_set(*end, set))
 	{
-		end--;
 		if (start > end)
-			break;
+			break ;
+		end--;
 	}
 	result_len = end - start + 1;
 	result = (char *)malloc(sizeof(char) * (result_len + 1));
@@ -48,15 +48,4 @@ char	*ft_strtrim(const char *s1, const char *set)
 		return (0);
 	ft_strlcpy(result, start, result_len + 1);
 	return (result);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%s\n", ft_strtrim("abbbcc", "ab"));
-	printf("%s\n", ft_strtrim("", "ab"));
-	printf("%s\n", ft_strtrim("aabbaa", "ab"));
-	printf("%s", ft_strtrim("abccbb", "ab"));
-	return 0;
 }

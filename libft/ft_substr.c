@@ -6,11 +6,20 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:46 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 13:45:03 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/11 04:42:01 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*make_emp_string(void)
+{
+	char	*result;
+
+	result = (char *)malloc(sizeof(char));
+	*result = '\0';
+	return (result);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -18,11 +27,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char		*result;
 
 	s_len = ft_strlen(s);
-	if (s_len <= start)
-		return (0);
-	else
+	if (start <= s_len)
 	{
-		if (start + len <= s_len)
+		if (start + len <= s_len + 1)
 		{
 			result = (char *)malloc(sizeof(char) * (len + 1));
 			if (result == 0)
@@ -31,20 +38,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		}
 		else
 		{
-			result = (char *)malloc(sizeof(char) * (s_len - start + 1));
+			result = (char *)malloc(sizeof(char) * (s_len - start + 2));
 			if (result == 0)
 				return (0);
-			ft_strlcpy(result, s + start, s_len - start + 1);
+			ft_strlcpy(result, s + start, s_len - start + 2);
 		}
 	}
+	else
+		return (make_emp_string());
 	return (result);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	char *p2 = ft_substr("abcdef", 2, 2);
-	printf("%s", p2);
-	return 0;
 }

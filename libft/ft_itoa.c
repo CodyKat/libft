@@ -6,11 +6,11 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:16 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 12:54:14 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/12 04:26:09 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_cal_num_len(long c)
 {
@@ -27,33 +27,36 @@ static int	ft_cal_num_len(long c)
 	return (len);
 }
 
-static char	*ft_make_num(long num, int sign, int num_len)
+static char	*ft_make_neg_num(long num, int num_len)
 {
 	char	*result;
 
-	if (sign == 1)
+	result = (char *)malloc(sizeof(char) * (num_len + 2));
+	if (result == 0)
+		return (0);
+	result[num_len + 1] = '\0';
+	while (num_len > 0)
 	{
-		result = (char *)malloc(sizeof(char) * (num_len + 1));
-		if (result == 0)
-			return (0);
-		result[num_len] = '\0';
-		while (--num_len >= 0)
-		{
-			result[num_len] = (num % 10) + '0';
-			num /= 10;
-		}
+		result[num_len] = (num % 10) + '0';
+		num /= 10;
+		num_len--;
 	}
-	else
+	result[num_len] = '-';
+	return (result);
+}
+
+static char	*ft_make_pos_num(long num, int num_len)
+{
+	char	*result;
+
+	result = (char *)malloc(sizeof(char) * (num_len + 1));
+	if (result == 0)
+		return (0);
+	result[num_len] = '\0';
+	while (--num_len >= 0)
 	{
-		result = (char *)malloc(sizeof(char) * (num_len + 2));
-		result[num_len + 1] = '\0';
-		while (num_len > 0)
-		{
-			result[num_len] = (num % 10) +'0';
-			num /= 10;
-			num_len--;
-		}
-		result[num_len] = '-';
+		result[num_len] = (num % 10) + '0';
+		num /= 10;
 	}
 	return (result);
 }
@@ -61,29 +64,18 @@ static char	*ft_make_num(long num, int sign, int num_len)
 char	*ft_itoa(int c)
 {
 	long	num;
-	int		sign;
 	int		num_len;
 
 	num = c;
 	if (num < 0)
 	{
-		sign = -1;
 		num *= -1;
+		num_len = ft_cal_num_len(num);
+		return (ft_make_neg_num(num, num_len));
 	}
 	else
-		sign = 1;
-	num_len = ft_cal_num_len(num);
-	return (ft_make_num(num, sign, num_len));
-}
-
-#include <stdio.h>
-int main()
-{
-	printf("%s\n", ft_itoa(2147483647));
-	printf("%s\n", ft_itoa(-2147483648));
-	printf("%s\n", ft_itoa(+2147483647));
-	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(-0));
-	printf("%s\n", ft_itoa('a'));
-	return 0;
+	{
+		num_len = ft_cal_num_len(num);
+		return (ft_make_pos_num(num, num_len));
+	}
 }

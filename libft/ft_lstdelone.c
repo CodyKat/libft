@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 19:03:58 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 04:25:47 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/10 14:18:36 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/12 22:22:16 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	while (n-- > 0)
-	{
-		*(char *)s = '\0';
-		s++;
-	}
+	del(lst->content);
+	free(lst);
 }

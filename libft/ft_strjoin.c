@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:14 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 13:43:33 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/10 15:25:28 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_memcpy(result, s1, s1_len);
 	ft_memcpy(result + s1_len, s2, s2_len + 1);
 	return (result);
-}
-
-#include <stdio.h>
-int main()
-{
-	printf("%s\n", ft_strjoin("abc", "def"));
-	printf("%s\n", ft_strjoin("abc", ""));
-	printf("%s\n", ft_strjoin("", "def"));	
-	printf("%s", ft_strjoin("", ""));
-	return 0;
 }

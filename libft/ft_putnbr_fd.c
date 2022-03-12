@@ -6,11 +6,11 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:24:36 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 13:42:22 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/12 04:28:00 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h" 
 
 static int	ft_num_len(long l_num)
 {
@@ -62,10 +62,4 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_print_digit(l_num, locate, fd);
 		locate--;
 	}
-}
-
-int main()
-{
-	ft_putnbr_fd(-2147483648, 1);
-	return 0;
 }

@@ -6,24 +6,24 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:50 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 11:34:20 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/12 04:28:26 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	ft_count_words(const char *s, char c)
 {
 	int	count;
 
 	count = 0;
-	while (s != 0)
+	while (*s != '\0')
 	{
 		while (*s == c)
 			s++;
-		if (*s == 0)
+		if (*s == '\0')
 			return (count);
-		while (s != 0 && *s != c)
+		while (*s != '\0' && *s != c)
 			s++;
 		count++;
 	}
@@ -94,18 +94,4 @@ char	**ft_split(const char *s, char c)
 	}
 	table[word_count] = 0;
 	return (table);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	int i = 0;
-	char **set = ft_split("  abcd  ef  gh  ", ' ');
-	while (set[i] != 0)
-	{
-		printf("%s\n", set[i]);
-		i++;
-	}
-	return 0;
 }

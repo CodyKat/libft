@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 19:03:58 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 04:25:47 by jaemjeon         ###   ########.fr       */
+/*   Created: 2022/03/10 14:58:35 by jaemjeon          #+#    #+#             */
+/*   Updated: 2022/03/12 19:58:53 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (n-- > 0)
+	while (1)
 	{
-		*(char *)s = '\0';
-		s++;
+		f(lst->content);
+		if (lst->next == 0)
+			break ;
+		lst = lst->next;
 	}
 }
