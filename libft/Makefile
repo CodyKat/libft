@@ -56,7 +56,7 @@ endif
 all : ${NAME}
 
 $(NAME) : ${OBJ_FILES}
-	ar rs ${NAME} ${OBJS}
+	ar rs ${NAME} ${OBJ_FILES}
 
 .c.o : ${SRCS} ${BONUS}
 	${CC} ${CFLAGS} -c $^
