@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:31 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 04:26:57 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/14 21:28:07 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	to_find = (unsigned char)c;
 	while (n-- > 0)
 	{
-		if (*ptr == to_find)
+		if ((unsigned char)*ptr == to_find)
 			return ((void *)ptr);
 		ptr++;
 	}

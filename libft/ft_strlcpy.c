@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:22 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 22:05:12 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/14 22:31:03 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	src_len;
 
 	src_len = ft_strlen(src);
-	if (dstsize <= 0)
+	if (dstsize == 0)
 		return (src_len);
 	while (--dstsize > 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:13:54 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 19:58:59 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:26:07 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == 0)
-		return (lst);
+		return (0);
 	while (lst->next != 0)
 	{
 		lst = lst->next;

@@ -47,12 +47,18 @@ SRCS_BONUS = ft_lstnew.c		\
 OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
+ifdef IS_BONUS
+	OBJ_FILES = ${OBJS} ${OBJS_BONUS}
+else
+	OBJ_FILES = ${OBJS}
+endif
+
 all : ${NAME}
 
-$(NAME) : ${OBJS}
-	ar rs ${NAME} ${OBJS}
+$(NAME) : ${OBJ_FILES}
+	ar rs ${NAME} ${OBJ_FILES}
 
-.c.o : ${SRCS} ${SRCS_BONUS}
+.c.o : ${SRCS} ${BONUS}
 	${CC} ${CFLAGS} -c $^
 
 clean :
@@ -61,8 +67,8 @@ clean :
 fclean : clean
 	rm -f ${NAME}
 
-bonus : ${OBJS} ${OBJS_BONUS}
-	ar rs ${NAME} ${OBJS} ${OBJS_BONUS}
+bonus :
+	make IS_BONUS=1 all
 
 .PHONY : all clean fclean bonus re
 

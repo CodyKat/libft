@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:59:30 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/13 03:15:04 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:37:44 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*cur_node;
 	t_list	*new_node;
 
-	new_node = ft_lstnew(f(lst->content));
-	if (new_node == 0)
+	start_node = ft_lstnew(f(lst->content));
+	if (start_node == 0)
 		return (0);
-	start_node = new_node;
 	cur_node = start_node;
 	lst = lst->next;
 	while (lst)

@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:56:31 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 21:50:58 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:45:06 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*front;
 
 	front = *lst;
-	if (front == 0)
-		return ;
 	while (*lst)
 	{
 		del((*lst)->content);

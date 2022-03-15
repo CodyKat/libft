@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:54 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/10 21:43:47 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/14 22:29:41 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if (to_find == '\0')
 		return ((char *)s);
 	return (0);
 }

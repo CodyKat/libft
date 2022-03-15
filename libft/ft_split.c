@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 19:04:50 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 04:28:26 by jaemjeon         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 static int	ft_count_words(const char *s, char c)
@@ -33,7 +21,6 @@ static int	ft_count_words(const char *s, char c)
 static char	*ft_alloc_string(char **dst, const char *src, char del)
 {
 	int		len;
-	int		idx;
 
 	len = 0;
 	while (*src == del)
@@ -47,14 +34,8 @@ static char	*ft_alloc_string(char **dst, const char *src, char del)
 	if (dst == 0)
 		return (0);
 	src -= len;
-	idx = 0;
-	while (*(src + idx) != del && *(src + idx) != '\0')
-	{
-		*(*dst + idx) = *(src + idx);
-		idx++;
-	}
-	*(*dst + idx) = '\0';
-	return ((char *)(src + idx - 1));
+	ft_strlcpy(*dst, src, len + 1);
+	return ((char *)(src + len - 1));
 }
 
 static void	free_back(char **table, int idx)
