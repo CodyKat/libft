@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:46 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/11 04:42:01 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:49:24 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static char	*make_emp_string(void)
 	char	*result;
 
 	result = (char *)malloc(sizeof(char));
+	if (result == 0)
+		return (0);
 	*result = '\0';
 	return (result);
 }
