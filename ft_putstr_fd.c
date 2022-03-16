@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:42:49 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 04:28:07 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:44:30 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s != '\0')
-	{
-		write(fd, s, 1);
-		s++;
-	}
+	int	len;
+
+	len = ft_strlen(s);
+	write(fd, s, len);
 }
