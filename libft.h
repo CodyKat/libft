@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:46:01 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/16 19:46:02 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/03/18 18:12:22 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	*ft_calloc(size_t count, size_t size);
 void	*ft_memccpy(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memmove(char *dest, const char *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 
 t_list	*ft_lstnew(void *content);
