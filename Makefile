@@ -52,9 +52,6 @@ all : ${NAME}
 $(NAME) : ${OBJS}
 	ar rs ${NAME} ${OBJS}
 
-.c.o : ${SRCS} ${SRCS_BONUS}
-	${CC} ${CFLAGS} -c $^
-
 clean :
 	rm -f ${OBJS} ${OBJS_BONUS}
 
