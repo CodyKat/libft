@@ -58,8 +58,8 @@ all : ${NAME}
 $(NAME) : ${OBJ_FILES}
 	ar rs ${NAME} ${OBJ_FILES}
 
-.c.o : ${SRCS} ${BONUS}
-	${CC} ${CFLAGS} -c $^
+#.c.o : ${SRCS} ${BONUS}
+#	${CC} ${CFLAGS} -c $^
 
 clean :
 	rm -f ${OBJS} ${OBJS_BONUS}
