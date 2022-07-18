@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:45:50 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/16 19:45:52 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/07/19 04:00:21 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static char	*ft_alloc_string(char **dst, const char *src, char del)
 		len++;
 	}
 	*dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (dst == 0)
-		return (0);
+	if (dst == NULL)
+		return (NULL);
 	src -= len;
 	ft_strlcpy(*dst, src, len + 1);
 	return ((char *)(src + len - 1));
@@ -72,19 +72,19 @@ char	**ft_split(const char *s, char c)
 	idx = 0;
 	word_count = ft_count_words(s, c);
 	table = (char **)malloc(sizeof(char *) * (word_count + 1));
-	if (table == 0)
-		return (0);
+	if (table == NULL)
+		return (NULL);
 	while (idx < word_count)
 	{
 		s = ft_alloc_string(&table[idx], s, c);
-		if (s == 0)
+		if (s == NULL)
 		{
 			free_back(table, idx);
-			return (0);
+			return (NULL);
 		}
 		s++;
 		idx++;
 	}
-	table[word_count] = 0;
+	table[word_count] = NULL;
 	return (table);
 }

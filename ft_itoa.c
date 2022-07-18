@@ -6,76 +6,69 @@
 /*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:16 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/07/19 03:23:04 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/07/19 03:59:16 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_cal_num_len(long c)
+static int	ft_find_sign(long long_num)
+{
+	if (long_num >= 0)
+		return (1);
+	else
+		return (-1);
+}
+
+static int	ft_calcul_len_of_long(long long_num)
 {
 	int	len;
 
-	if (c == 0)
-		return (1);
 	len = 0;
-	while (c > 0)
+	if (long_num == 0)
+		return (1);
+	if (long_num < 0)
 	{
-		c /= 10;
 		len++;
+		long_num *= -1;
+	}
+	while (long_num)
+	{
+		len++;
+		long_num /= 10;
 	}
 	return (len);
 }
 
-static char	*ft_make_neg_num(long num, int num_len)
+void	ft_fill_arr(char *output, long long_num, int num_len, int sign)
 {
-	char	*result;
-
-	result = (char *)malloc(sizeof(char) * (num_len + 2));
-	if (result == 0)
-		return (0);
-	result[num_len + 1] = '\0';
-	while (num_len > 0)
+	if (long_num < 0)
+		long_num *= -1;
+	output[num_len] = '\0';
+	while (--num_len > 0)
 	{
-		result[num_len] = (num % 10) + '0';
-		num /= 10;
-		num_len--;
+		output[num_len] = (long_num % 10) + '0';
+		long_num /= 10;
 	}
-	result[num_len] = '-';
-	return (result);
-}
-
-static char	*ft_make_pos_num(long num, int num_len)
-{
-	char	*result;
-
-	result = (char *)malloc(sizeof(char) * (num_len + 1));
-	if (result == 0)
-		return (0);
-	result[num_len] = '\0';
-	while (--num_len >= 0)
-	{
-		result[num_len] = (num % 10) + '0';
-		num /= 10;
-	}
-	return (result);
+	if (sign == 1)
+		output[0] = long_num + '0';
+	else
+		output[0] = '-';
 }
 
 char	*ft_itoa(int c)
 {
-	long	num;
+	long	long_num;
+	int		sign;
 	int		num_len;
+	char	*output;
 
-	num = c;
-	if (num < 0)
-	{
-		num *= -1;
-		num_len = ft_cal_num_len(num);
-		return (ft_make_neg_num(num, num_len));
-	}
-	else
-	{
-		num_len = ft_cal_num_len(num);
-		return (ft_make_pos_num(num, num_len));
-	}
+	long_num = c;
+	sign = ft_find_sign(long_num);
+	num_len = ft_calcul_len_of_long(long_num);
+	output = (char *)malloc(sizeof(char) * (num_len + 1));
+	if (output == NULL)
+		return (NULL);
+	ft_fill_arr(output, long_num, num_len, sign);
+	return (output);
 }
