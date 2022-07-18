@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:42 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 17:53:38 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/07/19 03:17:58 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static int	is_in_set(const char chr, const char *set)
 	while (*set != '\0')
 	{
 		if (chr == *set)
-			return (1);
+			return (TRUE);
 		set++;
 	}
-	return (0);
+	return (FALSE);
 }
 
 char	*ft_strtrim(const char *s1, const char *set)
@@ -44,8 +44,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	}
 	result_len = end - start + 1;
 	result = (char *)malloc(sizeof(char) * (result_len + 1));
-	if (result == 0)
-		return (0);
+	if (result == NULL)
+		return (NULL);
 	ft_strlcpy(result, start, result_len + 1);
 	return (result);
 }

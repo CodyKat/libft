@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:46 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/15 20:49:24 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/07/19 03:18:29 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static char	*make_emp_string(void)
 	char	*result;
 
 	result = (char *)malloc(sizeof(char));
-	if (result == 0)
-		return (0);
+	if (result == NULL)
+		return (NULL);
 	*result = '\0';
 	return (result);
 }
@@ -34,15 +34,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		if (start + len <= s_len + 1)
 		{
 			result = (char *)malloc(sizeof(char) * (len + 1));
-			if (result == 0)
-				return (0);
+			if (result == NULL)
+				return (NULL);
 			ft_strlcpy(result, s + start, len + 1);
 		}
 		else
 		{
 			result = (char *)malloc(sizeof(char) * (s_len - start + 2));
-			if (result == 0)
-				return (0);
+			if (result == NULL)
+				return (NULL);
 			ft_strlcpy(result, s + start, s_len - start + 2);
 		}
 	}

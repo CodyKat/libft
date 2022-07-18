@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:34 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 17:08:56 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/07/19 03:17:23 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static int	check_is_there(const char *haystack, const char *needle, size_t len)
 	while (len-- > 0)
 	{
 		if (*haystack++ != *needle++)
-			return (0);
+			return (FALSE);
 	}
-	return (1);
+	return (TRUE);
 }
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)

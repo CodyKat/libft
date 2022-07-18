@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:54 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/14 22:29:41 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/07/19 03:20:22 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -23,5 +25,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (to_find == '\0')
 		return ((char *)s);
-	return (0);
+	return (NULL);
 }

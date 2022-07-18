@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:16:58 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/13 02:18:56 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/07/19 02:59:56 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (*lst == 0)
+	if (*lst == NULL)
 		*lst = new;
 	else
 		(ft_lstlast(*lst))->next = new;

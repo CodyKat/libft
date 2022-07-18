@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:39 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/14 21:17:38 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/07/19 03:05:21 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*p_dst;
 	const unsigned char	*p_src;
 
-	if (dst == 0 && src == 0)
-		return (0);
+	if (dst == NULL || src == NULL)
+		return (NULL);
 	p_dst = dst;
 	p_src = src;
 	while (n-- > 0)
