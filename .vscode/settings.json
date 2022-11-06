@@ -1,3 +1,10 @@
 {
-	"makefile.extensionOutputFolder": "./.vscode"
+	"makefile.extensionOutputFolder": "./.vscode",
+	"files.associations": {
+		"errno.h": "c",
+		"__config": "c",
+		"__threading_support": "c",
+		"cerrno": "c",
+		"locale": "c"
+	}
 }
