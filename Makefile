@@ -44,8 +44,16 @@ SRCS_BONUS = ft_lstnew.c		\
 			 ft_lstclear.c		\
 			 ft_lstiter.c		\
 			 ft_lstmap.c
-OBJS = ${SRCS:.c=.o}
+
+
+OBJS_MAN = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
+
+ifdef IS_BONUS
+	OBJS = $(OBJS_MAN) $(OBJS_BONUS)
+else
+	OBJS = $(OBJS_MAN)
+endif
 
 all : ${NAME}
 
@@ -58,8 +66,8 @@ clean :
 fclean : clean
 	rm -f ${NAME}
 
-bonus : ${OBJS} ${OBJS_BONUS}
-	ar rs ${NAME} ${OBJS} ${OBJS_BONUS}
+bonus :
+	IS_BONUS=1 make all
 
 .PHONY : all clean fclean bonus re
 
