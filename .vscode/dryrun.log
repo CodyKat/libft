@@ -1,3 +1,4 @@
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/jaemjeon/42seoul/libft'
 gcc -Wall -Wextra -Werror   -c -o ft_memset.o ft_memset.c
 gcc -Wall -Wextra -Werror   -c -o ft_bzero.o ft_bzero.c

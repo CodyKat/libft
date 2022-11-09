@@ -6,11 +6,13 @@
 /*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:03:53 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/07/19 02:59:08 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/11/10 04:05:28 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <errno.h>
+#define BASE 10
 
 static int	is_space(const char *c)
 {
@@ -19,31 +21,60 @@ static int	is_space(const char *c)
 	return (FALSE);
 }
 
-int	ft_atoi(const char *str)
+static const char	*skip_space_detmin_sign(const char *str, int *sign)
 {
-	int		result;
-	int		sign;
-	char	*digit_ptr;
-
-	result = 0;
-	sign = 1;
 	while (is_space(str))
+		str++;
+	if (*str == '+')
 	{
 		str++;
+		*sign = 1;
 	}
-	if (*str == '+')
-		str++;
 	else if (*str == '-')
 	{
 		str++;
-		sign *= -1;
+		*sign = -1;
 	}
-	digit_ptr = (char *)str;
-	while (ft_isdigit(*digit_ptr))
+	else
+		*sign = 1;
+	return (str);
+}
+
+static int	check_out_of_range(long long result, int sign)
+{
+	if (sign == 1 && result > INT_MAX)
+	{
+		errno = ERANGE;
+		return (TRUE);
+	}
+	else if (sign == -1 && result < INT_MIN)
+	{
+		errno = ERANGE;
+		return (TRUE);
+	}
+	return (FALSE);
+}
+
+int	ft_atoi(const char *str)
+{
+	long long	result;
+	int			sign;
+
+	result = 0;
+	str = skip_space_detmin_sign(str, &sign);
+	while (ft_isalnum(*str))
 	{
 		result *= 10;
-		result += (*digit_ptr - '0');
-		digit_ptr++;
+		result += *str - '0';
+		if (check_out_of_range(result, sign))
+		{
+			if (sign == 1)
+				return (INT_MAX);
+			else
+				return (INT_MIN);
+		}
+		str++;
 	}
-	return (result * sign);
+	result *= sign;
+	return ((int)result);
 }

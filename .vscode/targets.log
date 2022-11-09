@@ -10,15 +10,19 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `ft_memset.o', needed by `libft.a'.  Stop.
 
 
-# Make data base, printed on Tue Jul 19 02:53:11 2022
+# Make data base, printed on Thu Nov 10 02:46:08 2022
 
 # Variables
 
+# environment
+VSCODE_GIT_ASKPASS_MAIN = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
- 
 # automatic
 ?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+ 
 # makefile (from `Makefile', line 38)
 SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 # automatic
@@ -32,7 +36,7 @@ CURDIR := /Users/jaemjeon/42seoul/libft
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"2dff5cff996ed6cbe8d8aa8740f86aa0.ko","_translationsConfigFile":"/Users/jaemjeon/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/tcf.json","_cacheRoot":"/Users/jaemjeon/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko","_resolvedLanguagePackCoreLocation":"/Users/jaemjeon/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a","_corruptedFile":"/Users/jaemjeon/Library/Application Support/Code/clp/2dff5cff996ed6cbe8d8aa8740f86aa0.ko/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"c52c1e49612ff79df6ac4072c56848e2.ko","_translationsConfigFile":"/Users/jaemjeon/Library/Application Support/Code/clp/c52c1e49612ff79df6ac4072c56848e2.ko/tcf.json","_cacheRoot":"/Users/jaemjeon/Library/Application Support/Code/clp/c52c1e49612ff79df6ac4072c56848e2.ko","_resolvedLanguagePackCoreLocation":"/Users/jaemjeon/Library/Application Support/Code/clp/c52c1e49612ff79df6ac4072c56848e2.ko/d045a5eda657f4d7b676dedbfa7aab8207f8a075","_corruptedFile":"/Users/jaemjeon/Library/Application Support/Code/clp/c52c1e49612ff79df6ac4072c56848e2.ko/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile (from `Makefile', line 3)
@@ -40,25 +44,31 @@ CFLAGS = -Wall -Wextra -Werror
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
+VSCODE_INJECTION = 1
+# environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-INFOPATH = /opt/homebrew/share/info:
+INFOPATH = /opt/homebrew/share/info:/opt/homebrew/share/info:/opt/homebrew/share/info:
 # environment
 P9K_SSH = 0
 # environment
 MAIL = jaemjeon@student.42.fr
 # environment
-VSCODE_CWD = /
+VSCODE_CWD = /Users/jaemjeon/42seoul/libft
 # environment
-PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+PATH = /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/opt/homebrew/bin:/opt/homebrew/sbin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+ZDOTDIR = /Users/jaemjeon
+# environment
+LaunchInstanceID = 971E5E65-0578-42A7-8E48-0B4EE16B153E
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.kw0etCBcoN/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.O0B8H2fNWE/Listeners
 # automatic
 %F = $(notdir $%)
 # makefile (from `Makefile', line 47)
@@ -72,7 +82,7 @@ OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
-MANPATH = /opt/homebrew/share/man::
+MANPATH = /opt/homebrew/share/man:/usr/share/man:/usr/local/share/man:/Applications/Wireshark.app/Contents/Resources/share/man:/opt/homebrew/share/man:
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -80,7 +90,9 @@ HOME = /Users/jaemjeon
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/jaemjeon/Library/Application Support/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/jaemjeon/Library/Application Support/Code/CachedData/d045a5eda657f4d7b676dedbfa7aab8207f8a075
 # environment
 LOGNAME = jaemjeon
 # environment
@@ -94,15 +106,19 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
+MAKELEVEL := 0
+# environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
+# environment
+LC_TERMINAL = iTerm2
 # makefile (from `Makefile', line 4)
 SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 # environment
-SHLVL = 1
+SHLVL = 7
 # makefile (from `Makefile', line 1)
 CC = gcc
 # default
@@ -111,6 +127,10 @@ MAKE_VERSION := 3.81
 USER = jaemjeon
 # makefile
 .DEFAULT_GOAL := all
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p1:30E0EEFF-8274-45D8-8414-BDAB38725B69
 # makefile (from `Makefile', line 2)
 NAME = libft.a
 # environment
@@ -119,6 +139,10 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# environment
+VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
+# environment
+TERM_PROGRAM = vscode
 # default
 .VARIABLES := 
 # environment
@@ -126,7 +150,9 @@ TMPDIR = /var/folders/6y/r_plnjts3lz1zwf61_134ssw0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/jaemjeon/Library/Application Support/Code/1.69.1-main.sock
+VSCODE_IPC_HOOK = /Users/jaemjeon/Library/Application Support/Code/1.72.2-main.sock
+# environment
+VSCODE_GIT_ASKPASS_NODE = /Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper (Plugin).app/Contents/MacOS/Code Helper (Plugin)
 # environment
 MallocNanoZone = 0
 # makefile
@@ -136,30 +162,47 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
+TERM_PROGRAM_VERSION = 1.72.2
+# environment
 NVM_DIR = /Users/jaemjeon/.nvm
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.7088510.7088516
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.11216831.11216837.E409E280-77B7-4FA3-B459-709FC1CD09B6
+# environment
+LC_TERMINAL_VERSION = 3.4.16
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
- 
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
 # environment
+ITERM_SESSION_ID = w0t0p1:30E0EEFF-8274-45D8-8414-BDAB38725B69
+# environment
 HOMEBREW_REPOSITORY = /opt/homebrew
+# environment
+COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x3:0x33
 # environment
 COMMAND_MODE = unix2003
+# environment
+GIT_ASKPASS = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
 # default
 MAKEFILES := 
 # automatic
 <F = $(notdir $<)
 # environment
+ITERM_PROFILE = Default
+# environment
+USER_ZDOTDIR = /Users/jaemjeon
+# environment
 PAGER = less
 # environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186a5
+# environment
+P9K_TTY = old
 # automatic
 ^F = $(notdir $^)
 # default
@@ -167,15 +210,19 @@ SUFFIXES :=
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
-MAKELEVEL := 0
+VSCODE_GIT_IPC_HANDLE = /var/folders/6y/r_plnjts3lz1zwf61_134ssw0000gn/T/vscode-git-3227d32ff3.sock
 # environment
 LANG = C
 # environment
-VSCODE_PID = 95094
+TERM = xterm-256color
+# environment
+_P9K_TTY = /dev/ttys010
+# environment
+VSCODE_PID = 24090
 # environment
 NVM_RC_VERSION = 
 # variable set hash-table stats:
-# Load=79/1024=8%, Rehash=0, Collisions=8/111=7%
+# Load=103/1024=10%, Rehash=0, Collisions=13/135=10%
 
 # Pattern-specific Variable Values
 
@@ -183,7 +230,7 @@ NVM_RC_VERSION =
 
 # Directories
 
-# . (device 16777231, inode 2315409): 51 files, no impossibilities.
+# . (device 16777234, inode 2315409): 51 files, no impossibilities.
 
 # 51 files, no impossibilities in 1 directories.
 
@@ -251,6 +298,7 @@ ft_lstlast.o:
 #  File has not been updated.
 
 # Not a target:
+ 
 ft_memchr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -346,7 +394,6 @@ ft_lstnew.o:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 bonus: ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_memchr.o ft_memcmp.o ft_strlen.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o ft_strncmp.o ft_strlcpy.o ft_strlcat.o ft_strnstr.o ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
@@ -545,6 +592,6 @@ ft_putendl_fd.o:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Jul 19 02:53:11 2022
+# Finished Make data base on Thu Nov 10 02:46:08 2022
 
  

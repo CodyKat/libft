@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:47 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/12 04:27:34 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/11/10 02:46:07 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -18,8 +18,6 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	p = b;
 	while (len-- > 0)
-	{
 		*p++ = c;
-	}
 	return (b);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:18 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/14 22:27:48 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/11/10 02:46:07 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	else
 	{
 		if (src_len + dst_len < dstsize)
-		{
 			ft_strlcpy(dst + dst_len, src, src_len + 1);
-		}
 		else
-		{
 			ft_strlcpy(dst + dst_len, src, dstsize - dst_len);
-		}
 	}
 	return (dst_len + src_len);
 }

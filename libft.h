@@ -6,7 +6,7 @@
 /*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 19:46:01 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/07/19 02:53:46 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/11/10 02:59:15 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define FALSE 0
 # define UCHAR_MIN 0
 # define UCHAR_MAX 255
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef struct s_list
 {

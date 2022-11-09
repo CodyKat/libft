@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42seoul.>       +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:05:38 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/03/15 14:01:40 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/11/10 02:46:07 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)(s + s_len));
 		s_len--;
 	}
-	return (0);
+	return (NULL);
 }
