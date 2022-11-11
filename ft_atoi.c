@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:03:53 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/11/10 04:10:48 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/11/11 15:32:51 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_atoi(const char *str)
 
 	result = 0;
 	str = skip_space_detmin_sign(str, &sign);
-	while (ft_isalnum(*str))
+	while (ft_isdigit(*str))
 	{
 		result *= 10;
 		result += *str - '0';
