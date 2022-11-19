@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jaemjeon <jaemjeon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jaemjeon <jaemjeon@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 19:04:16 by jaemjeon          #+#    #+#             */
-/*   Updated: 2022/07/19 03:59:16 by jaemjeon         ###   ########.fr       */
+/*   Updated: 2022/11/19 14:04:49 by jaemjeon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	ft_calcul_len_of_long(long long_num)
 	return (len);
 }
 
-void	ft_fill_arr(char *output, long long_num, int num_len, int sign)
+static void	ft_fill_arr(char *output, long long_num, int num_len, int sign)
 {
 	if (long_num < 0)
 		long_num *= -1;
