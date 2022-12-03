@@ -44,21 +44,22 @@ SRCS_BONUS = ft_lstnew.c		\
 			 ft_lstclear.c		\
 			 ft_lstiter.c		\
 			 ft_lstmap.c
-
-
-OBJS_MAN = ${SRCS:.c=.o}
+OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
 ifdef IS_BONUS
-	OBJS = $(OBJS_MAN) $(OBJS_BONUS)
+	OBJ_FILES = ${OBJS} ${OBJS_BONUS}
 else
-	OBJS = $(OBJS_MAN)
+	OBJ_FILES = ${OBJS}
 endif
 
 all : ${NAME}
 
-$(NAME) : ${OBJS}
-	ar rs ${NAME} ${OBJS}
+$(NAME) : ${OBJ_FILES}
+	ar rs ${NAME} ${OBJ_FILES}
+
+#.c.o : ${SRCS} ${BONUS}
+#	${CC} ${CFLAGS} -c $^
 
 clean :
 	rm -f ${OBJS} ${OBJS_BONUS}
